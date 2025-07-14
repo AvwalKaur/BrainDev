@@ -1,1 +1,1 @@
-# BrainDev
+# NexusGrid - Cognitive Commerce Engine
