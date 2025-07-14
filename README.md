@@ -62,7 +62,7 @@ nodemon server.js
 5️⃣ **Open your browser:**
 
 ```
-http://localhost:5000
+http://localhost:5500
 ```
 
 
@@ -72,3 +72,7 @@ http://localhost:5000
 - Minimizes **losses during crises** by proactive rerouting and inventory management.
 - Reduces **manual coordination delays** between teams.
 - Builds a **foundation for scalable cognitive commerce orchestration** for large-scale retail supply chains.
+
+### Contributors : 
+- Bhavya Sinha, Avwal Kaur, Divyanshi Pal, Gunjan Ruhal
+- Made with ❤️ by Team HERizon 
