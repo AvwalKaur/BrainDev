@@ -1,0 +1,75 @@
+{
+    "agents": [
+      {
+        "name": "Delivery Agent – Dallas",
+        "type": "delivery",
+        "status": "active",
+        "uptime": 97,
+        "location": { "lat": 32.7767, "lng": -96.797 }
+      },
+      {
+        "name": "Inventory Agent – Chicago",
+        "type": "inventory",
+        "status": "warning",
+        "uptime": 81,
+        "location": { "lat": 41.8781, "lng": -87.6298 }
+      },
+      {
+        "name": "Supply Chain Agent – LA",
+        "type": "supply_chain",
+        "status": "error",
+        "uptime": 63,
+        "location": { "lat": 34.0522, "lng": -118.2437 }
+      },
+      {
+        "name": "Delivery Agent – New York",
+        "type": "delivery",
+        "status": "active",
+        "uptime": 96,
+        "location": { "lat": 40.7128, "lng": -74.006 }
+      },
+      {
+        "name": "Inventory Agent – Atlanta",
+        "type": "inventory",
+        "status": "active",
+        "uptime": 91,
+        "location": { "lat": 33.749, "lng": -84.388 }
+      },
+      {
+        "name": "Supply Chain Agent – Seattle",
+        "type": "supply_chain",
+        "status": "warning",
+        "uptime": 76,
+        "location": { "lat": 47.6062, "lng": -122.3321 }
+      },
+      {
+        "name": "Delivery Agent – Denver",
+        "type": "delivery",
+        "status": "active",
+        "uptime": 94,
+        "location": { "lat": 39.7392, "lng": -104.9903 }
+      },
+      {
+        "name": "Inventory Agent – Miami",
+        "type": "inventory",
+        "status": "error",
+        "uptime": 54,
+        "location": { "lat": 25.7617, "lng": -80.1918 }
+      },
+      {
+        "name": "Supply Chain Agent – Houston",
+        "type": "supply_chain",
+        "status": "active",
+        "uptime": 89,
+        "location": { "lat": 29.7604, "lng": -95.3698 }
+      },
+      {
+        "name": "Delivery Agent – Boston",
+        "type": "delivery",
+        "status": "warning",
+        "uptime": 82,
+        "location": { "lat": 42.3601, "lng": -71.0589 }
+      }
+    ]
+  }
+  

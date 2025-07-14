@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="sytleshome.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <style>
+        .about-us {
+    margin-top: 100px; /* push it lower */
+    padding: 40px 0;
+    background: #f4f4f4;
+}
+
+.about-us-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    overflow-x: auto; /* optional: adds scroll if not enough space */
+    padding: 20px 0;
+    flex-wrap: nowrap; /* keep them in one row */
+}
+
+.team-member {
+    perspective: 1000px;
+    width: 250px;
+    height: 320px;
+    cursor: pointer;
+}
+
+.team-member .flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.team-member.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.team-member .flip-card-front,
+.team-member .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.team-member .flip-card-front {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.team-member .flip-card-front img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.team-member .flip-card-front p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.team-member .flip-card-back {
+    background: #fff;
+    transform: rotateY(180deg);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <div class="nav-container">
+            <div class="left-nav">
+                <div class="logo">
+                    <img src="https://www.walmart.com/favicon.ico" alt="Walmart Logo">
+                </div>
+                <nav class="main-nav">
+                    <a href="/" class="navlink">Home</a>
+                    <a href="/orchestration/orchestrator.html" class="navlink">Live Orchestration</a>
+                    <a href="/crisis" class="navlink">Crisis Simulator</a>
+                    <a href="/agent-control" class="navlink">Agent Control Center</a>
+                    
+                </nav>
+            </div>
+
+            <div class="nav-actions">
+                
+                <a href="/login"><img src="icons8-user-50.png" alt="Profile" class="profile-pic" /></a>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="the-bg">
+        <video autoplay muted loop playsinline>
+            <source src="videotry1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="heading">
+            <h1 "><span class="nexus">Nexus</span><span class="grid">Grid</span></h1>
+            <div class="typing-text" id="typingText"></div>
+            <p>A centralized AI engine that monitors and coordinates all operational systems, making the supply chain
+                more cost-effective and operationally efficient</p>
+        </div>
+    </div>
+
+
+    <div class="features-flex">
+
+        <div class="container1">
+            <p class="heading-key">Key</p>
+            <p class="heading-features">Features</p>
+        </div>
+
+        <div class="container2">
+            <div class="feature">
+                <h3 class="typing-title-1"></h3>
+                <p class="feature-text text-1"></p>
+            </div>
+            <div class="feature">
+                <h3 class="typing-title-2"></h3>
+                <p class="feature-text text-2"></p>
+            </div>
+            <div class="feature">
+                <h3 class="typing-title-3"></h3>
+                <p class="feature-text text-3"></p>
+            </div>
+            <div class="feature">
+                <h3 class="typing-title-4"></h3>
+                <p class="feature-text text-4"></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <div class="benefits">
+            <div class="video-background">
+                <video autoplay muted loop>
+                    <source src="background-video2-benefits.mp4" type="video/mp4">
+                </video>
+                <div class="video-fade-overlay"></div> <!-- Multi-side fade layer -->
+            </div>
+
+            <h1>Benefits to Walmart</h1>
+
+            <div class="card-container">
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="truck.png">
+                            <h2>Real Time Agent Orchestration</h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Walmart can monitor, control, and reroute delivery, inventory, and supply agents
+                                instantly.
+                                This improves response time, minimizes downtime, and maximizes operational agility
+                                across stores.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="user-minus.png">
+                            <h2>Role based Secure Access</h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>Only verified Walmart staff can access the system based on their roles.
+                                This ensures operational integrity while protecting critical logistics data from
+                                unauthorized changes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="strategy.png">
+                            <h2>Centralised AI decision hub</h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>One platform for all agent data, metrics, and actions — reducing fragmentation.
+                                This boosts efficiency by unifying decisions under one intelligent, coordinated AI
+                                layer.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <img src="lock-keyhole-open.png">
+                            <h2>Crisis Aversion and Control</h2>
+                        </div>
+                        <div class="flip-card-back">
+                            <p>The system enables one-click crisis response to shut down or reroute agents in
+                                emergencies.
+                                This rapid containment protects Walmart’s supply chain from cascading failures during
+                                disruptions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-us">
+        <div class="heading-team">
+            <p>About the Team</p>
+        </div>
+        <div class="about-us-grid">
+            <div class="team-member">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="gunjannew.jpg" alt="Team Member 1">
+                        <p>Gunjan Ruhal</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>A third year computer science student with a keen interest in frontend, machine learning and quite a
+                            lot of dad jokes one would say.</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="team-member">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="div.jpeg" alt="Team Member 2">
+                        <p>Divyanshi Pal</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>An engineering student who loves ideating and turning ideas into real, impactful solutions with keen
+                            interest in GenAI</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="team-member">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="avwalnew.jpg" alt="Team Member 3">
+                        <p>Avwal Kaur</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>A curious and driven computer science junior who loves building practical tech solutions and
+                            contributing to meaningful change</p>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="team-member">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <img src="bhavyanew.jpg" alt="Team Member 4">
+                        <p>Bhavya Sinha</p>
+                    </div>
+                    <div class="flip-card-back">
+                        <p>Hi, I’m Bhavya – an engineering student with a soft spot for animals, backend dev, and chaotic humor.
+                            I love learning React, goofing around with friends, and tinkering with ideas that make life a bit
+                            better. Usually found with Spotify on and a new project (or snack) in hand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+
+    <footer class="walmart-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="https://www.walmart.com/favicon.ico" alt="Walmart Logo" width="40">
+            </div>
+            <div class="footer-links">
+                <a href="#">Walmart's cognitive commerce engine | Internal Use Only | v2.3.1</a>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- javascript tag -->
+    <script src="scripthome.js"></script>
+</body>
+
+</html>

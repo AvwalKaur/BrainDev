@@ -1,0 +1,743 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #003087;
+  color: white;
+  padding: 0 2rem;
+  background: linear-gradient(135deg, #003087 0%, #002366 100%);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 3rem;
+  padding: 1rem 0.5rem;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 2rem;
+}
+
+.navlink {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  padding: 1rem 0;
+  margin: 0 0.5rem;
+}
+
+
+.navlink::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+
+.navlink:hover::before {
+  width: 100%;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+
+
+.search-bar {
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  font-size: 0.9rem;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1), 0 0 0 2px rgba(0, 48, 135, 0.3);
+}
+
+.profile-pic {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+  transform: scale(1.05);
+}
+
+
+.the-bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.the-bg video {
+  /* position:relative; */
+  width: 100%;
+  height: 50%;
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  z-index: 2;
+  text-align: center;
+  padding: 0.5rem;
+  background: rgba(0, 48, 135, 0.6);
+  border-radius: 12px;
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.heading h1 {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 1s ease-out forwards;
+  font-size: 4.5rem;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.nexus {
+  color: rgba(255, 194, 32, 1); /* Walmart Yellow */
+}
+
+.grid {
+  color: white; /* Pinkish accent */
+}
+
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.typing-text {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+  margin: 0.5rem 0 0.5rem 0;
+  text-align: center;
+  min-height: 1rem;
+}
+
+/* features */
+
+.features-flex {
+  display: flex;
+  height: 100vh;
+
+  /* flex-direction: row; */
+}
+
+.container1 {
+  width: 50%;
+  position: relative;
+  background-image: url('key_featuresimg1.jpg');
+  /* Add your image URL here */
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  /* display:flex; */
+}
+
+
+.container1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  /* White with 0.7 opacity */
+  background:
+    /* Right-edge fade (starts at 60% width, ends transparent) */
+    linear-gradient(to right,
+      rgba(255, 255, 255, 0) 70%,
+      rgba(255, 255, 255, 0.3) 85%,
+      rgba(255, 255, 255, 0.7) 80%,
+      white 100%),
+    /* Top-edge fade (starts transparent at top) */
+    linear-gradient(to bottom,
+      /* rgba(255, 255, 255, 0) 10%, 
+      rgba(255, 255, 255, 0.7) 60% */
+      rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0.3) 35%,
+      rgba(255, 255, 255, 0.7) 80%,
+      white 100%),
+    /* Bottom-edge fade (starts transparent at bottom) */
+    linear-gradient(to top,
+      /* rgba(255, 255, 255, 0) 10%, 
+      rgba(255, 255, 255, 0.7) 60% */
+      rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0.3) 35%,
+      rgba(255, 255, 255, 0.7) 80%,
+      white 100%);
+  z-index: 0;
+}
+
+.container1>* {
+  position: relative;
+  z-index: 1;
+}
+
+.container2 {
+  width: 50%;
+  padding: 2rem 2rem;
+}
+
+.heading-key {
+  font-size: 7rem;
+  font-weight: bold;
+  text-align: left;
+  margin-left: 2rem;
+
+  /* position: absolute;  */
+  /* or 'absolute' if inside a positioned parent */
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  line-height: 0.2;
+  color: #003087;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+}
+
+.heading-features {
+  font-size: 7rem;
+  font-weight: bold;
+  text-align: center;
+  /* margin-bottom: 10rem; */
+  margin-left: 4rem;
+
+  /* position: absolute;  */
+  /* or 'absolute' if inside a positioned parent */
+  bottom: 0;
+  left: 0;
+  padding: 2rem;
+  line-height: 0.2;
+  color: #003087;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+}
+
+.containers2 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+  gap: 3rem;
+}
+
+.feature {
+  margin-top: 1.2rem;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.typing-title-1,
+.typing-title-2,
+.typing-title-3,
+.typing-title-4 {
+  font-size: 1.3rem;
+  color: #003087;
+  margin-bottom: 0.2rem;
+  min-height: 2.2rem;
+}
+
+.feature-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #333;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease;
+}
+
+.text-1.show,
+.text-2.show,
+.text-3.show,
+.text-4.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* benefits */
+
+/* .benefits {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  margin-bottom: 10rem;
+}
+
+.benefits h1 {
+  font-size: 5rem;
+  padding: 1rem 3rem;
+  color: #003087;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+} */
+.content-wrapper{
+  height: 100vh;
+}
+.benefits {
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  /* Needed for video positioning */
+  overflow: hidden;
+  /* Keeps video contained */
+  margin-bottom: 10rem;
+}
+
+.video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.video-background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  display: block; /* Fix for inline element spacing */
+}
+
+/* Adjust fade overlay to be less aggressive */
+.video-fade-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(to right, 
+      /* rgba(255,255,255,0) 60%, 
+      rgba(255,255,255,0.2) 80%, 
+      rgba(255,255,255,0.5) 100%), */
+       rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0.3) 35%,
+      rgba(255, 255, 255, 0.7) 80%,
+      white 100%
+    )
+    linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0.3) 35%,
+      rgba(255, 255, 255, 0.7) 80%,
+      white 100%
+    )
+    linear-gradient(to top, 
+       rgba(255, 255, 255, 0) 10%,
+      rgba(255, 255, 255, 0.3) 35%,
+      rgba(255, 255, 255, 0.7) 80%,
+      white 100%
+    );
+}
+
+
+.flip-card-front {
+  background: rgba(255, 255, 255, 0.95);
+  /* Near-opaque for clarity */
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg,
+      rgba(0, 48, 135, 0.95) 0%,
+      rgba(0, 35, 102, 0.95) 100%);
+}
+
+.flip-card-front {
+  background: linear-gradient(135deg, white 0%, white 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  gap: 0.8rem;
+}
+
+.flip-card-front img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  margin-bottom: 0.3rem;
+}
+
+.flip-card-front h2 {
+  margin: 0;
+  font-size: 1.15rem;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.flip-card {
+  width: 250px;
+  height: 230px; /* Increased height to accommodate icon */
+}
+
+.flip-card-back {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Keep all your existing styles below */
+.flip-card-back {
+  background: linear-gradient(135deg, #003087 20%, #002366 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 15px #003087aa;
+  border-radius: 15px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.flip-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 48, 135, 0.2) !important;
+}
+
+/* Rest of your existing CSS remains the same */
+.benefits h1 {
+  font-size: 5rem;
+  padding: 1rem 3rem;
+  color: #003087;
+  position: relative;
+  /* text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  /* Ensures cards stay above video */
+  margin-bottom: 3rem;
+}
+
+
+.flip-card {
+  margin-top: 2rem;
+  background-color: transparent;
+  width: 250px;
+  height: 200px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 0 0 15px #003087aa;
+  border-radius: 15px;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: white;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.flip-card-front {
+  color: #003087;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  color: #333;
+}
+
+.flip-card {
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.flip-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 48, 135, 0.2) !important;
+}
+
+.flip-card-front {
+  background: linear-gradient(135deg, white 0%, white 100%);
+}
+
+.flip-card-back {
+  background: linear-gradient(135deg, #003087 20%, #002366 100%);
+  color: white;
+}
+
+/* about us section */
+
+.about-us{
+  height:100vh;
+}
+
+.heading-team p {
+  margin-top: 0;
+  font-size: 5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color:#003087;
+}
+
+.about-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  text-align: center;
+  background-color: #f9f9f9;
+}
+
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.team-member:hover img {
+  border-color: #007bff;
+}
+
+.team-member p {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.about-us-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  text-align: center;
+  background-color: white;
+}
+
+.team-member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.team-member:hover img {
+  border-color: rgba(0, 48, 135);
+}
+
+.team-member p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.more-bio {
+  display: none;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.team-member.active .more-bio {
+  display: block;
+}
+
+
+.team-member {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.team-member:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 48, 135, 0.15);
+}
+
+.team-member img {
+  transition: all 0.4s ease;
+  transform: translateZ(20px);
+}
+
+.team-member:hover img {
+  transform: scale(1.1) translateZ(30px);
+}
+
+
+.walmart-footer {
+  background-color: #003087; /* Walmart's official blue */
+  color: white;
+  padding: 2rem 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0 2rem;
+}
+
+.footer-logo img {
+  filter: brightness(0) invert(1); /* Makes logo white */
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.2s;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 0.85rem;
+  opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .footer-content {
+    padding: 0 1rem;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MindCare - Login & Create User</title>
+    <link rel="stylesheet" href="./login.css" />
+</head>
+
+<body>
+    <div class="container" id="container">
+        <!-- Create User (Sign Up) Form -->
+        <div class="form-container sign-up-container">
+            <form id="signup-form" data-action="signup">
+                <h1>Create User</h1>
+                <input type="text" id="name" placeholder="Name" required />
+                <input type="text" id="username" placeholder="Username" required />
+                <input type="password" id="password" placeholder="Password" required />
+                <p id="signup-error" class="error-message"></p>
+                <button type="submit">Create User</button>
+            </form>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-container sign-in-container">
+            <form id="login-form" data-action="login">
+                <h1>Login</h1>
+                <input type="text" id="login-username" placeholder="Username" required />
+                <input type="password" id="login-password" placeholder="Password" required />
+                <p id="login-error" class="error-message"></p>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome Back!</h1>
+                    <p>Enter the Nerve Center of Smart Commerce.</p>
+                    <button class="ghost" id="signIn">Login</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Create a New User</h1>
+                    <p>Welcome Back. Let’s Optimize Walmart Together.</p>
+                    <button class="ghost" id="signUp">Create User</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+
+        document.querySelectorAll("form").forEach(form => {
+            form.addEventListener("submit", async function (event) {
+                event.preventDefault();
+
+                const action = this.getAttribute("data-action");
+                const username = document.getElementById(action === "signup" ? "username" : "login-username").value;
+                const password = document.getElementById(action === "signup" ? "password" : "login-password").value;
+                const errorElement = document.getElementById(action === "signup" ? "signup-error" : "login-error");
+
+                let name = "";
+                if (action === "signup") {
+                    name = document.getElementById("name").value;
+                }
+
+                errorElement.textContent = "";
+
+                try {
+                    const response = await fetch("/MindCare/login", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(
+                            action === "signup"
+                                ? { name, username, password }
+                                : { username, password }
+                        )
+                    });
+
+                    const data = await response.json();
+
+                    if (!response.ok) {
+                        errorElement.textContent = data.msg || (action === "signup" ? "Task creation failed" : "Login failed");
+                    } else {
+                        if (action === "signup") {
+                            container.classList.remove("right-panel-active");
+                        } else {
+                            window.location.href = "/MindCare";
+                        }
+                    }
+                } catch (error) {
+                    errorElement.textContent = "An error occurred. Please try again.";
+                }
+            });
+        });
+    </script>
+
+    <style>
+        .error-message {
+            color: red;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</body>
+
+</html>
