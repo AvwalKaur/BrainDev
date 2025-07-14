@@ -75,4 +75,4 @@ http://localhost:5500
 
 ### Contributors : 
 - Bhavya Sinha, Avwal Kaur, Divyanshi Pal, Gunjan Ruhal
-- Made with ❤️ by Team HERizon 
+- Made with ❤️ by Team HERIzon 
